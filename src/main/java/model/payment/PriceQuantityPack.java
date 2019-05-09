@@ -1,5 +1,6 @@
 package model.payment;
 
+import java.text.DecimalFormat;
 import java.util.Map;
 
 public class PriceQuantityPack {
@@ -62,9 +63,15 @@ public class PriceQuantityPack {
         return result.toString();
     }
 
+    private String getRound(double value){
+        DecimalFormat df = new DecimalFormat("#.##");
+        return df.format(value);
+    }
+
 
     @Override
     public String toString() {
-        return  quantityProduct + SPACE + codeProduct + " $" + sum + LINE_SEPARATOR + getQuantityPackLikeString();
+
+        return  quantityProduct + SPACE + codeProduct + " $" + getRound(sum)+ LINE_SEPARATOR + getQuantityPackLikeString();
     }
 }
