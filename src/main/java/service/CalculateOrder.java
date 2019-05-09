@@ -3,8 +3,9 @@ package service;
 import model.packaging.Pack;
 import model.payment.PriceQuantityPack;
 
-import java.util.HashMap;
+import java.util.Collections;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class CalculateOrder {
 
@@ -15,7 +16,7 @@ public class CalculateOrder {
         Map<Integer, Double> product =pack.getPack();
         PriceQuantityPack priceQuantityPack = new PriceQuantityPack();
         priceQuantityPack.setQuantityProduct(quantity);
-        Map <String, Integer> fieldLocalQuantityPack = new HashMap<>();
+        Map <String, Integer> fieldLocalQuantityPack = new TreeMap<>(Collections.reverseOrder());
         double localSum =0;
         int size = product.size();
 
