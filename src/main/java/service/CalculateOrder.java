@@ -17,6 +17,7 @@ public class CalculateOrder {
         priceQuantityPack.setQuantityProduct(quantity);
         Map <String, Integer> fieldLocalQuantityPack = new HashMap<>();
         double localSum =0;
+        int size = product.size();
 
         for (Map.Entry<Integer, Double> entry : product.entrySet()) {
 
@@ -24,6 +25,12 @@ public class CalculateOrder {
             localSum += erst * entry.getValue();
             fieldLocalQuantityPack.put(entry.getKey() + " $" + entry.getValue(), erst);
             quantity -= erst * entry.getKey();
+
+            if (size == 1 && quantity > 0) {
+                localSum += entry.getValue();
+                fieldLocalQuantityPack.put(entry.getKey() + " $" + entry.getValue(), erst+1);
+            }
+            size--;
         }
 
         priceQuantityPack.setCodeProduct(pack.getCodeProduct());
