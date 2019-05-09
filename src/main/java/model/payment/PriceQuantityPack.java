@@ -4,6 +4,10 @@ import java.util.Map;
 
 public class PriceQuantityPack {
 
+    private static String TAB = "       ";
+    private static String LINE_SEPARATOR = System.getProperty("line.separator");
+    private static String SEPARATOR = " x ";
+    private static String SPACE = " ";
 
     private double sum;
     private String codeProduct;
@@ -43,5 +47,24 @@ public class PriceQuantityPack {
         this.quantityPack = quantityPack;
     }
 
+    private String getQuantityPackLikeString(){
 
+        StringBuilder result = new StringBuilder();
+        for (Map.Entry<String, Integer> entry : quantityPack.entrySet()) {
+
+            if(entry.getValue() == 0)continue;
+            result.append(TAB);
+            result.append(entry.getValue());
+            result.append(SEPARATOR);
+            result.append(entry.getKey());
+            result.append(LINE_SEPARATOR);
+        }
+        return result.toString();
+    }
+
+
+    @Override
+    public String toString() {
+        return  quantityProduct + SPACE + codeProduct + " $" + sum + LINE_SEPARATOR + getQuantityPackLikeString();
+    }
 }
