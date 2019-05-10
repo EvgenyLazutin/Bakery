@@ -1,6 +1,7 @@
 package model.payment;
 
 import java.text.DecimalFormat;
+import java.util.HashMap;
 import java.util.Map;
 
 public class PriceQuantityPack {
@@ -8,13 +9,16 @@ public class PriceQuantityPack {
     private static String TAB = "       ";
     private static String LINE_SEPARATOR = System.getProperty("line.separator");
     private static String SEPARATOR = " x ";
-    private static String SPACE = " ";
+    public static String SPACE = " ";
 
     private double sum;
     private String codeProduct;
     private int quantityProduct;
     private Map <String, Integer> quantityPack;
 
+    public PriceQuantityPack() {
+        quantityPack = new HashMap<>();
+    }
 
     public double getSum() {
         return sum;
