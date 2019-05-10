@@ -17,7 +17,7 @@ public class CalculateOrderTest {
     private CalculateOrder calculateOrder;
 
     @Before
-    public void init() { calculateOrder = new CalculateOrder();}
+    public void init() { calculateOrder = new CalculateOrderImpl();}
 
     @After
     public void tearDown() { calculateOrder = null; }

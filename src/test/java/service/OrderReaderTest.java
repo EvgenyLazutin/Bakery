@@ -14,7 +14,7 @@ public class OrderReaderTest {
 
     @Before
     public void init() {
-        orderReader = new OrderReader();
+        orderReader = new OrderReaderImpl();
     }
 
     @After
