@@ -7,11 +7,24 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.TreeMap;
 
+
+/**
+ * Implementation for interface {@link CalculateOrder} to calculate the quantity and cost of packaging.
+ * <p>
+ *
+ * @author Lazutin Evgeny
+ */
 public class CalculateOrderImpl implements CalculateOrder {
 
+    /**
+     * Calculate the quantity and cost of packaging.
+     *
+     * @param quantity the quantity of product
+     * @param pack     the Type of product {@link Pack}
+     * @return PriceQuantityPack: {@link PriceQuantityPack}
+     */
     @Override
     public PriceQuantityPack calculatePack(int quantity, Pack pack) {
-
 
         Map<Integer, Double> product = pack.getPack();
         PriceQuantityPack priceQuantityPack = new PriceQuantityPack();

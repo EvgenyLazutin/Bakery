@@ -12,6 +12,14 @@ import java.util.List;
 import static data.Product.*;
 import static model.payment.PriceQuantityPack.SPACE;
 
+
+/**
+ * Class to manage OrderReader {@link OrderReader} and CalculateOrder {@link CalculateOrder}
+ * for calculate the quantity and cost of packaging.
+ * <p>
+ *
+ * @author Lazutin Evgeny
+ */
 public class PackingManager {
 
     private final OrderReader orderReader;
@@ -24,6 +32,12 @@ public class PackingManager {
         this.calculateOrder = calculateOrder;
     }
 
+    /**
+     * Calculate the quantity and cost of packaging.
+     *
+     * @param orderFile name of file for reading input parameters
+     * @return List of PriceQuantityPack: {@link PriceQuantityPack}
+     */
     public List<PriceQuantityPack> paymentPacking(String orderFile) {
 
         List<PriceQuantityPack> priceQuantityPacksList = new ArrayList<>();

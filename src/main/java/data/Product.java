@@ -5,6 +5,13 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+ * Enum to simulate the DAO layer.
+ * In a real application, such data is best stored in a database.
+ * <p>
+ *
+ * @author Lazutin Evgeny
+ */
 public enum Product {
 
     VS5(new TreeMap<Integer, Double>(Collections.reverseOrder()) {{

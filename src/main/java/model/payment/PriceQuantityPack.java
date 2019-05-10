@@ -4,6 +4,13 @@ import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 
+
+/**
+ * Model for storing the calculation of the quantity and cost of packaging
+ * <p>
+ *
+ * @author Lazutin Evgeny
+ */
 public class PriceQuantityPack {
 
     public static String TAB = "       ";
@@ -14,7 +21,7 @@ public class PriceQuantityPack {
     private double sum;
     private String codeProduct;
     private int quantityProduct;
-    private Map <String, Integer> quantityPack;
+    private Map<String, Integer> quantityPack;
 
     public PriceQuantityPack() {
         quantityPack = new HashMap<>();
@@ -52,12 +59,17 @@ public class PriceQuantityPack {
         this.quantityPack = quantityPack;
     }
 
-    private String getQuantityPackLikeString(){
+    /**
+     * Formatting output in accordance with the task.
+     *
+     * @return Formatting String
+     */
+    private String getQuantityPackLikeString() {
 
         StringBuilder result = new StringBuilder();
         for (Map.Entry<String, Integer> entry : quantityPack.entrySet()) {
 
-            if(entry.getValue() == 0)continue;
+            if (entry.getValue() == 0) continue;
             result.append(TAB);
             result.append(entry.getValue());
             result.append(SEPARATOR);
@@ -67,7 +79,7 @@ public class PriceQuantityPack {
         return result.toString();
     }
 
-    private String getRound(double value){
+    private String getRound(double value) {
         DecimalFormat df = new DecimalFormat("#.##");
         return df.format(value);
     }
@@ -76,6 +88,6 @@ public class PriceQuantityPack {
     @Override
     public String toString() {
 
-        return  quantityProduct + SPACE + codeProduct + " $" + getRound(sum)+ LINE_SEPARATOR + getQuantityPackLikeString();
+        return quantityProduct + SPACE + codeProduct + " $" + getRound(sum) + LINE_SEPARATOR + getQuantityPackLikeString();
     }
 }

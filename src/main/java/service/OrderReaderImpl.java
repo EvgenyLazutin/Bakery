@@ -7,8 +7,21 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * Implementation for interface {@link OrderReader} for reading input parameters.
+ * <p>
+ *
+ * @author Lazutin Evgeny
+ */
 public class OrderReaderImpl implements OrderReader {
 
+    /**
+     * Reading input parameters from the file
+     *
+     * @param fileName name of file
+     * @return List of String with type and quantity products
+     */
     @Override
     public List<String> readFile(String fileName) {
 
